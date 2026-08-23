@@ -1,10 +1,4 @@
-<!--
-  Paste as a comment on https://github.com/LuckPerms/LuckPerms/issues/3689
-  Replace MODRINTH_URL with the real link once the project is live.
-  Delete the GitHub source line if you are not publishing the source.
--->
-
-I've built this as a standalone plugin, since it works just as well outside LuckPerms itself: **PermConflictWatchdog** — MODRINTH_URL
+I've built this as a standalone plugin, since it works just as well outside LuckPerms itself: **PermConflictWatchdog** — https://modrinth.com/plugin/permconflictwatchdog
 
 On startup it checks every installed plugin against a list of known permissions plugins and, if it finds more than one, prints a console warning naming them and explaining why the combination causes unpredictable permission checks. Staff can optionally get the same warning in chat on join, once per restart. Servers with a single permissions plugin see nothing at all.
 
@@ -17,5 +11,7 @@ A few details that seemed worth getting right:
 - It only reads and reports. It never disables or unregisters anything.
 
 Currently ships knowing about LuckPerms, PermissionsEx, GroupManager, zPermissions, PowerRanks, UltraPermissions, bPermissions, PermissionsBukkit and Privileges. Built and load-tested on Paper 26.2 / Java 25.
+
+Source: https://github.com/Lucio73-collab/PermConflictWatchdog
 
 Happy to add more plugins to the default list if anyone knows of ones I've missed. And if the LuckPerms team would rather this behaviour lived in LuckPerms itself, the detection logic is small and MIT licensed — feel free to take any of it.
