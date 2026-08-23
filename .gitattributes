@@ -1,0 +1,9 @@
+# Normalise text files in the repo, let Git pick native endings on checkout.
+* text=auto
+
+# The POSIX wrapper script must keep LF or it breaks on Linux/macOS/WSL.
+gradlew text eol=lf
+gradlew.bat text eol=crlf
+
+# Binary
+*.jar binary
