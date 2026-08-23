@@ -1,0 +1,22 @@
+name: PermConflictWatchdog
+version: '${version}'
+main: com.lucio73.permconflictwatchdog.PermConflictWatchdog
+api-version: '26.2'
+description: Warns server admins when more than one permissions plugin is installed.
+author: Lucio73
+website: https://modrinth.com/plugin/permconflictwatchdog
+
+commands:
+  permconflictwatchdog:
+    description: Show, re-run or reload the permission conflict check.
+    usage: /<command> [status|rescan|reload]
+    aliases: [pcw]
+    permission: permconflictwatchdog.admin
+
+permissions:
+  permconflictwatchdog.admin:
+    description: Allows use of /permconflictwatchdog.
+    default: op
+  permconflictwatchdog.alert:
+    description: Receives the in-game conflict alert on join.
+    default: op
