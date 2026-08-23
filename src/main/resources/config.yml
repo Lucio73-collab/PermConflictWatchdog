@@ -1,0 +1,114 @@
+# ============================================================================
+#  PermConflictWatchdog
+#  Warns you when a second permissions plugin is installed next to LuckPerms.
+#
+#  Nothing here changes how permissions work - the plugin only looks and warns.
+#  After editing this file run /pcw reload (no restart needed).
+# ============================================================================
+
+# Show the warning in-game to staff the first time they join after a restart.
+# Only players with the permission 'permconflictwatchdog.alert' (default: op)
+# see it, and each player is told once per server session, never repeatedly.
+# Set to false to keep the warning console-only.
+alert-ops-on-join: true
+
+# Only treat it as a conflict when LuckPerms itself is one of the plugins found.
+#   true  - warn about "LuckPerms + something else" (the usual case, and the one
+#           LuckPerms issue #3689 is about)
+#   false - warn about ANY two permissions plugins, LuckPerms or not
+require-luckperms: true
+
+# Which installed plugin counts as LuckPerms for the option above. Change this
+# only if you run a fork of LuckPerms that reports a different plugin name.
+luckperms-plugin-name: LuckPerms
+
+# Extra logging: prints how many plugins were scanned, which entry matched each
+# permissions plugin, and confirms the all-clear on servers with no conflict.
+# Leave false for normal use - a clean server then stays completely silent.
+debug: false
+
+# How long to wait after the server finishes starting before scanning, in ticks
+# (20 ticks = 1 second). The delay lets plugin loaders such as PlugMan finish
+# bringing in whatever they load, so those plugins are seen too.
+scan-delay-ticks: 20
+
+# Plugins listed here are never reported, even if they match an entry below.
+# Use this if a plugin on your server is a false positive, or if you knowingly
+# run two permissions plugins and do not want to be reminded about it.
+# Example:  ignored-plugins: ["GroupManager"]
+ignored-plugins: []
+
+# ----------------------------------------------------------------------------
+#  In-game alert text (MiniMessage format: https://docs.advntr.dev/minimessage/)
+#  Placeholders:  <plugins>  comma separated list of what was found
+#                 <count>    how many permissions plugins were found
+# ----------------------------------------------------------------------------
+messages:
+  alert-line-1: "<red><bold>[!]</bold> Permission plugin conflict:</red> <white><plugins></white>"
+  alert-line-2: "<gray>Keep only one permissions plugin installed. See the server console for details.</gray>"
+
+# ----------------------------------------------------------------------------
+#  Which plugins count as permissions plugins.
+#
+#  Edit this list freely - it is read at startup and on /pcw reload, so adding
+#  a plugin here never needs a rebuild of the jar.
+#
+#  Each entry takes:
+#    display-name  the name shown in warnings (required)
+#    names         plugin names as they appear in the plugin's own plugin.yml,
+#                  matched case-insensitively (this is the main mechanism)
+#    main-classes  fully qualified main classes, which still match when someone
+#                  renames the jar or runs a fork under a different name
+#
+#  An entry matches if EITHER a name OR a main class matches, so listing both
+#  costs nothing. 'main-classes' may be left empty.
+#
+#  NOT listed on purpose: Vault. Vault is a permissions *bridge*, not a
+#  permissions plugin, and is meant to be installed alongside LuckPerms.
+#  The same goes for rank/GUI helpers that store their data in LuckPerms.
+# ----------------------------------------------------------------------------
+known-permission-plugins:
+  - display-name: LuckPerms
+    names: [LuckPerms]
+    main-classes:
+      - me.lucko.luckperms.bukkit.LPBukkitBootstrap
+
+  - display-name: PermissionsEx
+    names: [PermissionsEx, PEX]
+    main-classes:
+      - ru.tehkode.permissions.bukkit.PermissionsEx
+      - ca.stellardrift.permissionsex.bukkit.PermissionsExPlugin
+
+  - display-name: GroupManager
+    names: [GroupManager, EssentialsGroupManager]
+    main-classes:
+      - org.anjocaido.groupmanager.GroupManager
+
+  - display-name: zPermissions
+    names: [zPermissions]
+    main-classes:
+      - org.tyrannyofheaven.bukkit.zPermissions.ZPermissionsPlugin
+
+  - display-name: PowerRanks
+    names: [PowerRanks]
+    main-classes:
+      - nl.svenar.PowerRanks.PowerRanks
+
+  - display-name: UltraPermissions
+    names: [UltraPermissions]
+    main-classes: []
+
+  - display-name: bPermissions
+    names: [bPermissions, bPermissions2]
+    main-classes:
+      - de.bananaco.bpermissions.imp.Permissions
+
+  - display-name: PermissionsBukkit
+    names: [PermissionsBukkit]
+    main-classes:
+      - com.platymuus.bukkit.permissions.PermissionsPlugin
+
+  - display-name: Privileges
+    names: [Privileges]
+    main-classes:
+      - net.krinsoft.privileges.Privileges
