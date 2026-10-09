@@ -1,4 +1,32 @@
-# PermConflictWatchdog
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner-dark.svg">
+    <img src="docs/assets/banner.svg" alt="PermConflictWatchdog: catches a second permissions plugin next to LuckPerms" width="100%">
+  </picture>
+</p>
+
+<p align="center">
+  <a href="https://modrinth.com/plugin/perm-conflict-watchdog"><strong>Download on Modrinth »</strong></a>
+  <br><br>
+  <a href="https://github.com/Lucio73-collab/PermConflictWatchdog/issues/new?template=bug_report.yml">Report bug</a>
+  ·
+  <a href="https://github.com/Lucio73-collab/PermConflictWatchdog/issues/new?template=feature_request.yml">Request feature</a>
+  ·
+  <a href="CHANGELOG.md">Changelog</a>
+</p>
+
+<p align="center">
+  <a href="https://modrinth.com/plugin/perm-conflict-watchdog"><img src="https://img.shields.io/modrinth/dt/perm-conflict-watchdog?style=flat-square&logo=modrinth&color=f5b82e&labelColor=111111" alt="Modrinth downloads"></a>
+  <a href="https://modrinth.com/plugin/perm-conflict-watchdog"><img src="https://img.shields.io/modrinth/v/perm-conflict-watchdog?style=flat-square&logo=modrinth&color=333333&labelColor=111111&label=version" alt="Modrinth version"></a>
+  <a href="https://github.com/Lucio73-collab/PermConflictWatchdog/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/Lucio73-collab/PermConflictWatchdog/ci.yml?style=flat-square&label=build&labelColor=111111" alt="Build"></a>
+  <img src="https://img.shields.io/badge/Paper-26.2-333333?style=flat-square&labelColor=111111" alt="Paper 26.2">
+  <img src="https://img.shields.io/badge/Java-25-333333?style=flat-square&logo=openjdk&labelColor=111111" alt="Java 25">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/Lucio73-collab/PermConflictWatchdog?style=flat-square&color=333333&labelColor=111111" alt="MIT license"></a>
+</p>
+
+<p align="center">
+  <img src="publish/gallery/01-console-warning.png" alt="PermConflictWatchdog console warning on a Paper 26.2 server running LuckPerms, GroupManager and a renamed PowerRanks" width="800">
+</p>
 
 A small Paper plugin that tells you when a second permissions plugin is installed
 next to LuckPerms, instead of leaving you to work it out from permissions that
@@ -27,7 +55,7 @@ unregisters anything.
 
 ## Install
 
-1. Download `PermConflictWatchdog-1.0.0.jar`.
+1. Download `PermConflictWatchdog-1.0.0.jar` from [Modrinth](https://modrinth.com/plugin/perm-conflict-watchdog).
 2. Drop it in your server's `plugins/` folder.
 3. Restart the server.
 
@@ -139,6 +167,10 @@ known-permission-plugins:
 
 Needs JDK 25. The jar lands in `build/libs/`.
 
+## Contributing
+
+See [CONTRIBUTING.md](.github/CONTRIBUTING.md). Security issues: [SECURITY.md](SECURITY.md).
+
 ## License
 
-MIT.
+Code released under the [MIT License](LICENSE).
