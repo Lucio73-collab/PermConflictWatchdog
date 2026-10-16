@@ -32,4 +32,4 @@ First release. Answers [LuckPerms issue #3689](https://github.com/LuckPerms/Luck
 - `require-luckperms` toggle to warn about any two permissions plugins rather
   than only combinations involving LuckPerms.
 
-[1.0.0]: https://github.com/Lucio73-collab/PermConflictWatchdog/releases/tag/v1.0.0
+[1.0.0]: https://github.com/LucioTD/PermConflictWatchdog/releases/tag/v1.0.0

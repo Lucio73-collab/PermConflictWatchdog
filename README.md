@@ -8,20 +8,18 @@
 <p align="center">
   <a href="https://modrinth.com/plugin/perm-conflict-watchdog"><strong>Download on Modrinth »</strong></a>
   <br><br>
-  <a href="https://github.com/Lucio73-collab/PermConflictWatchdog/issues/new?template=bug_report.yml">Report bug</a>
+  <a href="https://github.com/LucioTD/PermConflictWatchdog/issues/new?template=bug_report.yml">Report bug</a>
   ·
-  <a href="https://github.com/Lucio73-collab/PermConflictWatchdog/issues/new?template=feature_request.yml">Request feature</a>
+  <a href="https://github.com/LucioTD/PermConflictWatchdog/issues/new?template=feature_request.yml">Request feature</a>
   ·
   <a href="CHANGELOG.md">Changelog</a>
 </p>
 
 <p align="center">
-  <a href="https://modrinth.com/plugin/perm-conflict-watchdog"><img src="https://img.shields.io/modrinth/dt/perm-conflict-watchdog?style=flat-square&logo=modrinth&color=f5b82e&labelColor=111111" alt="Modrinth downloads"></a>
-  <a href="https://modrinth.com/plugin/perm-conflict-watchdog"><img src="https://img.shields.io/modrinth/v/perm-conflict-watchdog?style=flat-square&logo=modrinth&color=333333&labelColor=111111&label=version" alt="Modrinth version"></a>
-  <a href="https://github.com/Lucio73-collab/PermConflictWatchdog/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/Lucio73-collab/PermConflictWatchdog/ci.yml?style=flat-square&label=build&labelColor=111111" alt="Build"></a>
-  <img src="https://img.shields.io/badge/Paper-26.2-333333?style=flat-square&labelColor=111111" alt="Paper 26.2">
-  <img src="https://img.shields.io/badge/Java-25-333333?style=flat-square&logo=openjdk&labelColor=111111" alt="Java 25">
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/Lucio73-collab/PermConflictWatchdog?style=flat-square&color=333333&labelColor=111111" alt="MIT license"></a>
+  <a href="https://github.com/LucioTD/PermConflictWatchdog/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/LucioTD/PermConflictWatchdog/ci.yml?branch=main&label=ci&style=flat-square&labelColor=060606" alt="CI status"></a>
+  <a href="https://modrinth.com/plugin/perm-conflict-watchdog"><img src="https://img.shields.io/modrinth/dt/perm-conflict-watchdog?logo=modrinth&style=flat-square&labelColor=060606&color=1254c6" alt="Modrinth downloads"></a>
+  <img src="https://img.shields.io/badge/paper-26.2-3a3a3a?style=flat-square&labelColor=060606" alt="Paper 26.2">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-3a3a3a?style=flat-square&labelColor=060606" alt="MIT license"></a>
 </p>
 
 <p align="center">
@@ -49,9 +47,9 @@ unregisters anything.
 
 | | |
 |---|---|
-| Server | Paper 26.2 (or a Paper fork - Purpur, Pufferfish) |
+| Server | Paper 26.2 (or a Paper fork such as Purpur or Pufferfish) |
 | Java | 25 |
-| Dependencies | none - LuckPerms is not required to install it |
+| Dependencies | none, LuckPerms is not required to install it |
 
 ## Install
 
@@ -59,7 +57,7 @@ unregisters anything.
 2. Drop it in your server's `plugins/` folder.
 3. Restart the server.
 
-On a server with one permissions plugin you will see nothing at all - that is the
+On a server with one permissions plugin you will see nothing at all. That is the
 intended behaviour. On a server with two or more, the warning appears in the
 console a second after startup finishes.
 
@@ -96,7 +94,7 @@ per player per restart:
 | Subcommand | Does |
 |---|---|
 | `/pcw status` | Lists the permissions plugins found and whether a conflict is active. Also previews the exact message staff see on join. Default when no subcommand is given. |
-| `/pcw rescan` | Re-runs the sweep now - useful after loading or unloading a plugin at runtime. |
+| `/pcw rescan` | Re-runs the sweep now. Useful after loading or unloading a plugin at runtime. |
 | `/pcw reload` | Re-reads `config.yml`, then rescans. No restart needed after editing the config. |
 
 ## Permissions
@@ -139,7 +137,7 @@ it without waiting for a new jar. Ships knowing about:
 | Privileges | name, `net.krinsoft.privileges.Privileges` |
 
 An entry matches on **either** the plugin name **or** the main class, so a renamed
-jar or a fork running under a different name is still caught - the warning then
+jar or a fork running under a different name is still caught, and the warning then
 reads `PowerRanks (installed as MyRenamedPerms)`.
 
 **Vault is deliberately not on this list.** Vault is a permissions *bridge*, not a
